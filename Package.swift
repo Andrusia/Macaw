@@ -1,36 +1,22 @@
-// swift-tools-version:5.1
-
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
     name: "Macaw",
     platforms: [
-        .macOS(.v10_12),
-        .iOS(.v9)
+        .iOS(.v11)
     ],
     products: [
         .library(
-            name: "Macaw", 
+            name: "Macaw",
             targets: ["Macaw"]
-        )
-    ],
-    dependencies: [
-        .package(
-            url: "https://github.com/drmohundro/SWXMLHash",
-            from: "6.0.0"
         )
     ],
     targets: [
         .target(
             name: "Macaw",
-            dependencies: ["SWXMLHash"],
             path: "Source"
-        ),
-        .testTarget(
-            name: "MacawTests",
-            dependencies: ["Macaw"],
-            path: "MacawTests"
         )
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
 )
+
